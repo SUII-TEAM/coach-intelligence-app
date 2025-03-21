@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "921432704457",
+    "project_id": "ai-tactical-assistant",
+    "storage_bucket": "ai-tactical-assistant.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921432704457:android:4ebc8aea183c447af5d418",
+        "android_client_info": {
+          "package_name": "com.scai.ai_tactical_assistant"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZhzqvbGus_5SNv0S-mXLp5-ZmLnmWXWo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:921432704457:android:806b9dbcd12d4ba1f5d418",
+        "android_client_info": {
+          "package_name": "com.scai.aitacticalassistant"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZhzqvbGus_5SNv0S-mXLp5-ZmLnmWXWo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

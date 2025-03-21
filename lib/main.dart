@@ -1,60 +1,51 @@
+import 'package:ai_tactical_assistant/core/utils/app_bloc_observer/bloc_observer.dart';
+import 'package:ai_tactical_assistant/core/utils/get_storage_helper.dart';
+import 'package:ai_tactical_assistant/firebase_options.dart';
+import 'package:ai_tactical_assistant/my_app.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-void main() {
-  runApp(const MyApp());
-}
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), 
-    );
-  }
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await EasyLocalization.ensureInitialized();
+  // await ServiceLocator.init();
+  await CacheHelper.init();
+  Bloc.observer = MyBlocObserver();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      systemNavigationBarColor: Colors.transparent,
+      statusBarIconBrightness: Brightness.dark,
+    ),
+  );
+  runApp(
+    EasyLocalization(
+      path: 'assets/translations',
+      supportedLocales: const [Locale('en'), Locale('ar')],
+      fallbackLocale: const Locale('ar'),
+      startLocale: const Locale('ar'),
+      assetLoader: const RootBundleAssetLoader(),
+      child:
+          // FirebaseNotificationsHandler(
+          //   onTap: (details) {
+          //     // Map<String, dynamic> body = details.firebaseMessage.data;
+          //     // log(body['msg']);
+          //     // sl<AppNavigator>().navigatorKey.currentState?.push(MaterialPageRoute(
+          //     //       builder: (context) => Scaffold(),
+          //     //     ));
+          //   },
+          //   localNotificationsConfiguration: LocalNotificationsConfiguration(
+          //     androidConfig: AndroidNotificationsConfig(
+          //       appIconGetter: (p0) => '@mipmap/launcher_icon',
+          //     ),
+          //   ),
+          // child:
+          const MyApp(),
+      // ),
+    ),
+  );
 }
