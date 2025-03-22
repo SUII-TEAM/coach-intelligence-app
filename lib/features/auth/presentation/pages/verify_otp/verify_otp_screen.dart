@@ -3,6 +3,8 @@ import 'package:ai_tactical_assistant/core/constants/app_colors.dart';
 import 'package:ai_tactical_assistant/core/constants/app_text_styles.dart';
 import 'package:ai_tactical_assistant/core/constants/size_configuration.dart';
 import 'package:ai_tactical_assistant/core/widgets/app_spacer.dart';
+import 'package:ai_tactical_assistant/features/auth/presentation/pages/create_new_password/create_new_password_screen.dart';
+import 'package:ai_tactical_assistant/injection_container.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -55,7 +57,7 @@ class _OTPVerficationScreenState extends State<OTPVerficationScreen> {
               Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              const AppSpacer(heightRatio: 1.5),
+              const AppSpacer(heightRatio: 2),
               Text(
                 tr('verify_identity'),
                 style: TextStyles.bold24,
@@ -98,6 +100,7 @@ class _OTPVerficationScreenState extends State<OTPVerficationScreen> {
               const AppSpacer(heightRatio: 1.5),
               ElevatedButton(
                 onPressed: () {
+                  appNavigator.push(screen: CreateNewPasswordScreen());
                   // if (!formKey.currentState!.validate()) {
                   //   return;
                   // }

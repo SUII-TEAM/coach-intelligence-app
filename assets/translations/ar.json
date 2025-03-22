@@ -21,6 +21,8 @@
   "did_not_get_code": "لم تستلم الكود ؟",
   "resend_code": "اعادة الارسال",
   "period_expired": "انتهت المدة",
+  "enter_new_password": "ادخل كلمة المرور الجديدة",
+  "confirm_new_password": "تاكيد كلمة المرور الجديدة",
   "sending_code": "سيتم الارسال خلال",
   "create_new_password_text": "قم بأدخال الرقم السري الجديد للوصول الي حسابك",
 

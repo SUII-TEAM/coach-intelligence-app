@@ -55,7 +55,7 @@ class _SignInScreenState extends State<SignInScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: <Widget>[
-                  const AppSpacer(heightRatio: 1),
+                  const AppSpacer(heightRatio: 2),
                   Text(
                     tr('sign_in'),
                     style: TextStyles.bold24,
