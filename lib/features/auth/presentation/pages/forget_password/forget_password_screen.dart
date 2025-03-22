@@ -3,6 +3,8 @@ import 'package:ai_tactical_assistant/core/constants/app_text_styles.dart';
 import 'package:ai_tactical_assistant/core/constants/size_configuration.dart';
 import 'package:ai_tactical_assistant/core/utils/app_validator/app_validator.dart';
 import 'package:ai_tactical_assistant/core/widgets/app_spacer.dart';
+import 'package:ai_tactical_assistant/features/auth/presentation/pages/verify_otp/verify_otp_screen.dart';
+import 'package:ai_tactical_assistant/injection_container.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -19,7 +21,7 @@ class ForgetPasswordScreen extends StatelessWidget {
         children: [
           Text(
             tr('forgot_password'),
-            style: TextStyles.regular24,
+            style: TextStyles.bold24,
           ),
           const AppSpacer(heightRatio: 0.3),
           Text(
@@ -52,7 +54,8 @@ class ForgetPasswordScreen extends StatelessWidget {
           const AppSpacer(heightRatio: 1),
           ElevatedButton(
             onPressed: () {
-              
+              appNavigator.push(screen: OTPVerficationScreen());
+
               // if (!_formKey.currentState!.validate()) {
               //   return;
               // }

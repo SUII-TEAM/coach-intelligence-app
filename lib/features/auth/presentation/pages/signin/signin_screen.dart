@@ -58,7 +58,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   const AppSpacer(heightRatio: 1),
                   Text(
                     tr('sign_in'),
-                    style: TextStyles.regular24,
+                    style: TextStyles.bold24,
                     textAlign: TextAlign.center,
                   ),
                   const AppSpacer(heightRatio: 0.5),
