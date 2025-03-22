@@ -3,6 +3,8 @@ import 'package:ai_tactical_assistant/core/constants/app_text_styles.dart';
 import 'package:ai_tactical_assistant/core/constants/size_configuration.dart';
 import 'package:ai_tactical_assistant/core/utils/app_validator/app_validator.dart';
 import 'package:ai_tactical_assistant/core/widgets/password_text_form_field.dart';
+import 'package:ai_tactical_assistant/features/nav_bar/presentation/pages/main_screen.dart';
+import 'package:ai_tactical_assistant/injection_container.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -76,6 +78,7 @@ class _CreateNewPasswordScreenState extends State<CreateNewPasswordScreen> {
                     const AppSpacer(heightRatio: 1.5),
                     ElevatedButton(
                       onPressed: () {
+                        appNavigator.push(screen: MainScreen());
                         // if (!_formKey.currentState!.validate()) {
                         //   return;
                         // }

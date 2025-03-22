@@ -60,11 +60,25 @@ class AppNavigator {
     return navigatorKey.currentState!.popUntil((Route rout) => rout.isFirst);
   }
 
-  void showDialog({required Widget child}) {
+  void showDialog({
+    required Widget child,
+    bool? isDismissible,
+    bool? showCloseButton,
+  }) {
     if (webNavigatorKey.currentContext != null) {
-      return AppDialogs.showAppDialog(webNavigatorKey.currentContext!, child);
+      return AppDialogs.showAppDialog(
+        webNavigatorKey.currentContext!,
+        child,
+        isDismissible: isDismissible ?? true,
+        showCloseButton: showCloseButton ?? true,
+      );
     }
-    return AppDialogs.showAppDialog(navigatorKey.currentContext!, child);
+    return AppDialogs.showAppDialog(
+      navigatorKey.currentContext!,
+      child,
+      isDismissible: isDismissible ?? true,
+      showCloseButton: showCloseButton ?? true,
+    );
   }
 
   dynamic showSheet({required Widget child}) {

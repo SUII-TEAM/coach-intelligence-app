@@ -1,5 +1,6 @@
 import 'package:ai_tactical_assistant/core/utils/app_api_base_helper/app_api_base_helper.dart';
 import 'package:ai_tactical_assistant/core/utils/app_navigation/app_navigator.dart';
+import 'package:ai_tactical_assistant/features/nav_bar/nav_bar_injection.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -10,6 +11,7 @@ abstract class ServiceLocator {
   static Future<void> init() async {
     sl.allowReassignment = true;
     // features
+    initNavBarInjection();
     // initAuthInjection();
     // initHomeInjection();
     // initNotificationsInjection();
