@@ -13,7 +13,7 @@ class AppColors {
   static const Color warning = Color(0xFFF7B313);
 
   static const Color primary = Color(0xFF006C3D);
-  static const Color grey = Color(0xFF8E8E8E);
-  static const Color greyLight = Color(0xFFA2A8AF);
-  static const Color greyDark = Color(0xFF787878);
+  static Color get grey => const Color(0xFF656565);
+  static Color get lightGrey => const Color(0xFF6A6A6A);
+  static Color get lightestGrey => const Color(0xFFEDEDED);
 }

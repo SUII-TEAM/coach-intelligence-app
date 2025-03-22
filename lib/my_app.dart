@@ -1,6 +1,8 @@
 import 'package:ai_tactical_assistant/core/constants/theme/app_material_theme.dart';
+import 'package:ai_tactical_assistant/core/utils/app_navigation/app_navigator.dart';
 import 'package:ai_tactical_assistant/core/widgets/handle_error_screen.dart';
 import 'package:ai_tactical_assistant/features/auth/presentation/pages/splash/splash_screen.dart';
+import 'package:ai_tactical_assistant/injection_container.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -71,7 +73,7 @@ class MyApp extends StatelessWidget {
           locale: context.locale,
           supportedLocales: context.supportedLocales,
           localizationsDelegates: [...context.localizationDelegates],
-          // navigatorKey: sl<AppNavigator>().navigatorKey,
+          navigatorKey: sl<AppNavigator>().navigatorKey,
           home: SplashScreen(),
           builder: (context, child) {
             handleErrorScreen(context);

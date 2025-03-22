@@ -1,6 +1,7 @@
 import 'package:ai_tactical_assistant/core/constants/app_colors.dart';
 import 'package:ai_tactical_assistant/core/utils/app_validator/app_validator.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PasswordTextFormField extends StatefulWidget {
   final TextEditingController controller;
@@ -28,11 +29,9 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
         TextFormField(
           obscureText: isObscure,
           obscuringCharacter: '●',
-          validator:
-              (String? value) =>
-                  widget.validator != null
-                      ? widget.validator!(value)
-                      : Validator.password(value),
+          validator: (String? value) => widget.validator != null
+              ? widget.validator!(value)
+              : Validator.password(value),
           onTapOutside: (PointerDownEvent event) {
             FocusScope.of(context).unfocus();
           },
@@ -47,7 +46,8 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
                 isObscure
                     ? Icons.visibility_off_outlined
                     : Icons.visibility_outlined,
-                color: AppColors.greyLight,
+                color: AppColors.lightGrey,
+                size: 25.sp,
               ),
             ),
           ),

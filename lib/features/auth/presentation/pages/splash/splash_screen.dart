@@ -2,6 +2,8 @@ import 'package:ai_tactical_assistant/core/constants/app_assets.dart';
 import 'package:ai_tactical_assistant/core/constants/app_colors.dart';
 import 'package:ai_tactical_assistant/core/constants/app_fonts.dart';
 import 'package:ai_tactical_assistant/core/constants/app_text_styles.dart';
+import 'package:ai_tactical_assistant/features/auth/presentation/pages/signin/signin_screen.dart';
+import 'package:ai_tactical_assistant/injection_container.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -62,19 +64,24 @@ class _SplashScreenState extends State<SplashScreen> {
           Scaffold(
         backgroundColor: AppColors.primary,
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(AppAssets.appLogoWhite, width: 400.sp)
-                  .animate()
-                  .scaleXY(
-                    begin: 0.5,
-                    end: 1.0,
-                    duration: 1500.ms,
-                    curve: Curves.easeOutBack,
-                  )
-                  .fadeIn(duration: 600.ms),
-            ],
+          child: GestureDetector(
+            onTap: () {
+              appNavigator.push(screen: SignInScreen());
+            },
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(AppAssets.appLogoWhite, width: 400.sp)
+                    .animate()
+                    .scaleXY(
+                      begin: 0.5,
+                      end: 1.0,
+                      duration: 1500.ms,
+                      curve: Curves.easeOutBack,
+                    )
+                    .fadeIn(duration: 600.ms),
+              ],
+            ),
           ),
         ),
       ),

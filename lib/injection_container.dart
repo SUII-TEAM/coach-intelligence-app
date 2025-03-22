@@ -1,4 +1,8 @@
+import 'package:ai_tactical_assistant/core/utils/app_api_base_helper/app_api_base_helper.dart';
+import 'package:ai_tactical_assistant/core/utils/app_navigation/app_navigator.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 final GetIt sl = GetIt.instance;
 
@@ -15,32 +19,32 @@ abstract class ServiceLocator {
     // initEmployeeDetailsInjection();
 
     // core
-    // _injectSharedPreferences();
-    // _injectSecureStorage();
-    // _injectAppNavigator();
+    _injectSharedPreferences();
+    _injectSecureStorage();
+    _injectAppNavigator();
     // _injectDioHelper();
   }
 }
 
-// void _injectSharedPreferences() async {
-//   final SharedPreferences sharedPreferences =
-//       await SharedPreferences.getInstance();
-//   sl.registerLazySingleton<SharedPreferences>(() => sharedPreferences);
-// }
+void _injectSharedPreferences() async {
+  final SharedPreferences sharedPreferences =
+      await SharedPreferences.getInstance();
+  sl.registerLazySingleton<SharedPreferences>(() => sharedPreferences);
+}
 
-// void _injectSecureStorage() async {
-//   AndroidOptions androidOptions = const AndroidOptions(
-//     encryptedSharedPreferences: true,
-//   );
-//   final FlutterSecureStorage storage = FlutterSecureStorage(
-//     aOptions: androidOptions,
-//   );
-//   sl.registerLazySingleton<FlutterSecureStorage>(() => storage);
-// }
+void _injectSecureStorage() async {
+  AndroidOptions androidOptions = const AndroidOptions(
+    encryptedSharedPreferences: true,
+  );
+  final FlutterSecureStorage storage = FlutterSecureStorage(
+    aOptions: androidOptions,
+  );
+  sl.registerLazySingleton<FlutterSecureStorage>(() => storage);
+}
 
-// void _injectAppNavigator() {
-//   sl.registerLazySingleton<AppNavigator>(() => AppNavigator());
-// }
+void _injectAppNavigator() {
+  sl.registerLazySingleton<AppNavigator>(() => AppNavigator());
+}
 
 // void _injectDioHelper() {
 //   final Dio dio = Dio();
@@ -49,10 +53,10 @@ abstract class ServiceLocator {
 //   sl.registerLazySingleton<ApiBaseHelper>(() => apiBaseHelper);
 // }
 
-// SharedPreferences get sharedPreferences => sl<SharedPreferences>();
+SharedPreferences get sharedPreferences => sl<SharedPreferences>();
 
-// FlutterSecureStorage get secureStorage => sl<FlutterSecureStorage>();
+FlutterSecureStorage get secureStorage => sl<FlutterSecureStorage>();
 
-// ApiBaseHelper get dioHelper => sl<ApiBaseHelper>();
+ApiBaseHelper get dioHelper => sl<ApiBaseHelper>();
 
-// AppNavigator get appNavigator => sl<AppNavigator>();
+AppNavigator get appNavigator => sl<AppNavigator>();
