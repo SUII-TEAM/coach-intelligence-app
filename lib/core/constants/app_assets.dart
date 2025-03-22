@@ -8,6 +8,7 @@ class AppAssets {
   static const String homeSolid = 'assets/images/home_solid.svg';
   static const String more = 'assets/images/more.svg';
   static const String moreSolid = 'assets/images/more_solid.svg';
-    static const String noInternet = 'assets/images/no_internet.png';
-
+  static const String noInternet = 'assets/images/no_internet.png';
+  static const String notification = 'assets/images/notifications.svg';
+  static const String currentMatch = 'assets/images/current_match.png';
 }

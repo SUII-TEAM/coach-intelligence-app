@@ -226,6 +226,8 @@
   "password_reset_successfully": "تم تعيين كلمة المرور بنجاح",
   "home": "الرئيسية",
   "profile": "الملف الشخصي",
+  "current_match":"المباراة الجارية",
+  "current_match_details" :"تفاصيل المباراة",
   "requests": "الطلبات",
   "no_internet_title": "برجاء التحقق من اتصالك بالانترنت حتي تتمكن من استخدام التطبيق",
   "no_internet_subTitle": "الوصول إلى خدمات الإنترنت",
