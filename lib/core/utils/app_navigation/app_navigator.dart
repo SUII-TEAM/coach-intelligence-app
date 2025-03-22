@@ -60,7 +60,7 @@ class AppNavigator {
     return navigatorKey.currentState!.popUntil((Route rout) => rout.isFirst);
   }
 
-  Future<void> showDialog({required Widget child}) {
+  void showDialog({required Widget child}) {
     if (webNavigatorKey.currentContext != null) {
       return AppDialogs.showAppDialog(webNavigatorKey.currentContext!, child);
     }

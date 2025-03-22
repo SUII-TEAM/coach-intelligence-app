@@ -15,7 +15,7 @@
   "sign_in": "تسجيل الدخول",
   "do_you_forgot_password": "هل نسيت كلمة المرور ؟",
   "forgot_password_description": "لا تقلق ! هذا ممكن. يرجى إدخال الرقم المرتبط بهذا الحساب.",
-  "send_code": "إرسال الرمز",
+  "send_code": "إرسال كود",
   "verify_otp": "تحقق من الرمز",
   "please_enter_the_code_sent_to_your_email": "يرجى إدخال الرمز المرسل إلى بريدك الإلكتروني ...",
   "confirm": "تأكيد",

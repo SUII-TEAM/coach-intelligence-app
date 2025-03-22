@@ -2,6 +2,8 @@ import 'package:ai_tactical_assistant/core/constants/app_assets.dart';
 import 'package:ai_tactical_assistant/core/constants/app_colors.dart';
 import 'package:ai_tactical_assistant/core/constants/size_configuration.dart';
 import 'package:ai_tactical_assistant/core/widgets/app_spacer.dart';
+import 'package:ai_tactical_assistant/features/auth/presentation/pages/forget_password/forget_password_screen.dart';
+import 'package:ai_tactical_assistant/injection_container.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -159,13 +161,12 @@ class _SignInScreenState extends State<SignInScreen> {
                   const AppSpacer(heightRatio: 1.5),
                   InkWell(
                     onTap: () {
-                      // appNavigator.push(
-                      //     screen: const ForgetPasswordScreen());
+                      appNavigator.showSheet(child: ForgetPasswordScreen());
                     },
                     child: Text(
                       tr('forgot_password'),
                       textAlign: TextAlign.center,
-                      style: TextStyles.light14,
+                      style: TextStyles.regular14,
                     ),
                   ),
                 ],
