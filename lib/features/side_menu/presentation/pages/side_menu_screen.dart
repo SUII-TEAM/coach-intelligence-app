@@ -5,6 +5,13 @@ class SideMenuScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Side Menu'),
+      ),
+      body: const Center(
+        child: Text('Side Menu Screen'),
+      ),
+    );
   }
 }

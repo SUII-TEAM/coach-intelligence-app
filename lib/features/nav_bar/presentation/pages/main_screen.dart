@@ -1,8 +1,8 @@
 import 'dart:core';
 import 'package:ai_tactical_assistant/core/constants/app_colors.dart';
 import 'package:ai_tactical_assistant/core/constants/app_text_styles.dart';
+import 'package:ai_tactical_assistant/core/enums/user_roles.dart';
 import 'package:ai_tactical_assistant/core/widgets/app_spacer.dart';
-import 'package:ai_tactical_assistant/features/home/presentation/pages/home_screen.dart';
 import 'package:ai_tactical_assistant/features/nav_bar/presentation/cubit/nav_bar_cubit.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -22,19 +22,18 @@ class MainScreen extends StatelessWidget {
     return BlocBuilder<NavBarCubit, NavBarState>(
       builder: (context, state) {
         final navigationCubit = context.read<NavBarCubit>();
+        final roleData = _getRoleData(UserRole.coach, navigationCubit);
         // final roleData = _getRoleData(currentRole, navigationCubit);
         return Scaffold(
-          body: HomeScreen(),
-          //  Builder(
-          //   builder: (context) {
-          //     return roleData[state.currentTab].tab;
-          //   },
-          // ),
+          body: Builder(
+            builder: (context) {
+              return roleData[state.currentTab].tab;
+            },
+          ),
           bottomNavigationBar: _buildBottomNavigationBar(
             navigationCubit,
             navigationCubit.coachNavTabs,
-            0,
-            // state.currentTab,
+            state.currentTab,
           ),
         );
         //       },
@@ -43,21 +42,13 @@ class MainScreen extends StatelessWidget {
     );
   }
 
-  // List<BottomNavBarEntity> _getRoleData(
-  //     UserRole role, NavBarCubit navigationCubit) {
-  //   switch (role) {
-  //     case UserRole.hr:
-  //       return navigationCubit.hrNavTabs;
-  //     case UserRole.employee:
-  //       return navigationCubit.employeeNavTabs;
-  //     case UserRole.manager:
-  //       return navigationCubit.managerNavTabs;
-  //     case UserRole.pm:
-  //       return navigationCubit.pmNavTabs;
-  //     case UserRole.teamLeader:
-  //       return navigationCubit.teamLeaderNavTabs;
-  //   }
-  // }
+  List<BottomNavBarEntity> _getRoleData(
+      UserRole role, NavBarCubit navigationCubit) {
+    switch (role) {
+      case UserRole.coach:
+        return navigationCubit.coachNavTabs;
+    }
+  }
 
   Widget _buildBottomNavigationBar(
     NavBarCubit navigationCubit,
