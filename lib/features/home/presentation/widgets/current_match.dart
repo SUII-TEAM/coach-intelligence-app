@@ -7,9 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CurrentMatch extends StatelessWidget {
-  const CurrentMatch({
-    super.key,
-  });
+  const CurrentMatch({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +21,7 @@ class CurrentMatch extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.sp, vertical: 20.sp),
+          padding: EdgeInsets.symmetric(horizontal: 35.sp, vertical: 12.sp),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -42,12 +40,12 @@ class CurrentMatch extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(50.r)),
                   padding:
-                      EdgeInsets.symmetric(horizontal: 30.sp, vertical: 7.sp),
+                      EdgeInsets.symmetric(horizontal: 30.sp, vertical: 5.sp),
                   minimumSize: Size(120.sp, 0.sp),
                 ),
                 child: Text(
                   tr('current_match_details'),
-                  style: TextStyles.bold10,
+                  style: TextStyles.bold12,
                 ),
               ),
             ],

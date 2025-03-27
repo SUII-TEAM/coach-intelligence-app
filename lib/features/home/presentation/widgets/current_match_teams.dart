@@ -1,7 +1,9 @@
 import 'package:ai_tactical_assistant/core/constants/app_assets.dart';
+import 'package:ai_tactical_assistant/core/constants/app_colors.dart';
 import 'package:ai_tactical_assistant/core/constants/app_text_styles.dart';
+import 'package:ai_tactical_assistant/features/home/presentation/widgets/current_team.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CurrentMatchTeams extends StatelessWidget {
   const CurrentMatchTeams({super.key});
@@ -11,28 +13,17 @@ class CurrentMatchTeams extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Column(
-          children: [
-            CircleAvatar(
-              radius: 25.r,
-              backgroundImage: AssetImage(AppAssets.appLogoGreen),
-              backgroundColor: Colors.white,
-            ),
-            // SizedBox(height: 8.h),
-            Text('نادي الهلال السعودي', style: TextStyles.semiBold12),
-          ],
+        CurrentTeam(
+          logo: AppAssets.elnasrLogo,
+          name: 'نادي النصر السعودي',
         ),
-        Text('ضد', style: TextStyles.semiBold12),
-        Column(
-          children: [
-            CircleAvatar(
-              radius: 25.r,
-              backgroundImage: AssetImage(AppAssets.appLogoGreen),
-              backgroundColor: Colors.white,
-            ),
-            // SizedBox(height: 8.h),
-            Text('نادي النصر السعودي', style: TextStyles.semiBold12),
-          ],
+        Text(
+          tr('vs'),
+          style: TextStyles.semiBold16.copyWith(color: AppColors.white),
+        ),
+        CurrentTeam(
+          logo: AppAssets.elnasrLogo,
+          name: 'نادي النصر السعودي',
         ),
       ],
     );
