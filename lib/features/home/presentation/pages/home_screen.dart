@@ -4,6 +4,8 @@ import 'package:ai_tactical_assistant/core/constants/app_text_styles.dart';
 import 'package:ai_tactical_assistant/core/widgets/app_spacer.dart';
 import 'package:ai_tactical_assistant/features/home/presentation/widgets/current_match.dart';
 import 'package:ai_tactical_assistant/features/home/presentation/widgets/section_header.dart';
+import 'package:ai_tactical_assistant/features/team_players/presentation/pages/team_players_screen.dart';
+import 'package:ai_tactical_assistant/features/team_players/presentation/widgets/player_card.dart';
 import 'package:ai_tactical_assistant/features/upcoming_matches/presentation/pages/upcoming_match_screen.dart';
 import 'package:ai_tactical_assistant/features/upcoming_matches/presentation/widgets/match_card.dart';
 import 'package:ai_tactical_assistant/injection_container.dart';
@@ -51,29 +53,33 @@ class HomeScreen extends StatelessWidget {
                 ListView.builder(
                   shrinkWrap: true,
                   itemCount: 3,
+                  physics: NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
-                    return MatchCard(
-                        // match: match
-                        );
+                    return MatchCard();
                   },
                 ),
                 AppSpacer(heightRatio: 0.3),
                 SectionHeader(
                   title: tr('team_members'),
                   onTap: () {
-                    // TODO:
+                    appNavigator.push(screen: TeamPlayersScreen());
                   },
                 ),
                 AppSpacer(heightRatio: 0.3),
-                // Expanded(
-                //   child: ListView.builder(
-                //     itemCount: matches.length,
-                //     itemBuilder: (context, index) {
-                //       final match = matches[index];
-                //       return MatchCard(match: match);
-                //     },
-                //   ),
-                // ),
+                GridView.builder(
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 3,
+                    crossAxisSpacing: 8.sp,
+                    mainAxisSpacing: 8.sp,
+                    childAspectRatio: 0.68,
+                  ),
+                  itemCount: 6,
+                  itemBuilder: (context, index) {
+                    return PlayerCard();
+                  },
+                ),
               ],
             ),
           ),

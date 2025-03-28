@@ -227,6 +227,7 @@
   "home": "الرئيسية",
   "profile": "الملف الشخصي",
   "search_by_team_name": "ابحث باسم الفريق",
+  "search_by_team_member" : "ابحث باسم اللاعب",
   "current_match":"المباراة الجارية",
   "current_match_details" :"تفاصيل المباراة",
   "vs" : "ضد",

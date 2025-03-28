@@ -28,6 +28,10 @@ class UpcomingMatchScreen extends StatelessWidget {
                 left: 20.sp, right: 20.sp, bottom: 14.sp, top: 8.sp),
             decoration: BoxDecoration(
               color: AppColors.white,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(16.r),
+                bottomRight: Radius.circular(16.r),
+              ),
             ),
             child: TextFormField(
               onTapOutside: (_) =>
