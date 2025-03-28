@@ -15,7 +15,7 @@ class CurrentTeam extends StatelessWidget {
     return Column(
       children: [
         CircleAvatar(
-          radius: 35.r,
+          radius: 32.r,
           backgroundColor: AppColors.white,
           child: CachedNetworkImage(
             imageUrl: logo,

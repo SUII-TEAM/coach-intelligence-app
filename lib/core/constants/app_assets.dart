@@ -13,4 +13,6 @@ class AppAssets {
   static const String noInternet = 'assets/images/no_internet.png';
   static const String notification = 'assets/images/notifications.svg';
   static const String currentMatch = 'assets/images/current_match.png';
+  static const String time = 'assets/images/time.svg';
+  static const String location = 'assets/images/location.svg';
 }

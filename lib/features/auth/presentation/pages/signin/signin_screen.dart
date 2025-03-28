@@ -3,6 +3,7 @@ import 'package:ai_tactical_assistant/core/constants/app_colors.dart';
 import 'package:ai_tactical_assistant/core/constants/size_configuration.dart';
 import 'package:ai_tactical_assistant/core/widgets/app_spacer.dart';
 import 'package:ai_tactical_assistant/features/auth/presentation/pages/forget_password/forget_password_screen.dart';
+import 'package:ai_tactical_assistant/features/nav_bar/presentation/pages/main_screen.dart';
 import 'package:ai_tactical_assistant/injection_container.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -132,6 +133,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   //           child:
                   ElevatedButton(
                     onPressed: () async {
+                      appNavigator.push(screen: MainScreen());
                       // if (context
                       //         .read<DetectUserByPhoneCubit>()
                       //         .state
